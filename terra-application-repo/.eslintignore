@@ -1,6 +1,0 @@
-node_modules
-coverage
-build
-lib
-**/aggregated-translations/*.*
-packages/terra-polyfill/src/index.js

@@ -2,30 +2,30 @@
   "name": "@cerner/browserslist-config-terra",
   "version": "3.2.0",
   "description": "Terra Browserslist Shared Config",
+  "author": "Cerner Corporation",
   "main": "browserslist.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra.git",
+    "directory": "packages/browserslist-config-terra"
+  },
+  "bugs": {
+    "url": "https://github.com/cerner/terra/issues"
+  },
+  "homepage": "https://github.com/cerner/terra",
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cerner/terra-toolkit.git",
-    "directory": "packages/browserslist-config-terra"
-  },
+  "license": "Apache-2.0",
   "keywords": [
+    "autoprefixer",
     "browserslist",
     "browserslist-config",
     "Cerner",
-    "Terra",
-    "autoprefixer",
+    "eslint",
     "stylelint",
-    "eslint"
+    "Terra"
   ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/cerner/terra-toolkit/issues"
-  },
-  "homepage": "https://github.com/cerner/terra-toolkit",
   "scripts": {
     "lint": "eslint --ext .js,.jsx ."
   }

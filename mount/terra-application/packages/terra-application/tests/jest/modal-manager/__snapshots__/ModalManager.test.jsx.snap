@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalManager Snapshots should render with optional props 1`] = `
+<ModalManager
+  disclosureAccessory={
+    <div>
+      Test Accessory
+    </div>
+  }
+  withDisclosureContainer={[Function]}
+>
+  <TestChild />
+</ModalManager>
+`;
+
+exports[`ModalManager Snapshots should render with required props 1`] = `
+<ModalManager
+  withDisclosureContainer={[Function]}
+>
+  <TestChild />
+</ModalManager>
+`;

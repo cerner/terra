@@ -59,10 +59,10 @@ const coreConfig = () => ({
         label: 'Tests',
         contentExtension: 'test',
       }],
-      sideEffectImportFilePaths: [
-        '../../../../terra-ui-repo/src/initializeXFC.js',
-        '../../../../terra-ui-repo/src/IllustrationGrid.scss',
-      ],
+//      sideEffectImportFilePaths: [
+//        '../../../../terra-ui-repo/src/initializeXFC.js',
+//        '../../../../terra-ui-repo/src/IllustrationGrid.scss',
+//      ],
 
     }),
   ],

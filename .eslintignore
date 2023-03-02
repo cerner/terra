@@ -1,6 +1,10 @@
-node_modules
-build
-reports
-lib
 **/aggregated-translations/*.*
+build
+coverage
 dist
+generated-themes
+lib
+node_modules
+reports
+terra-date-picker/src/react-datepicker/*.*
+terra-polyfill/src/index.js

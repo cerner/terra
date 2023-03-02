@@ -1,11 +1,15 @@
+# add git-ignore syntax here of things you don't want copied into docker image
+
 .DS_Store
 .git
 .gitignore
 .idea
-log/*
-tmp
-node_modules
 packages/*/node_modules
-lib
+*docker-compose*
+*Dockerfile*
 build
 generated-themes
+lib
+log/*
+node_modules
+tmp

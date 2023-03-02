@@ -1,49 +1,39 @@
 {
   "name": "@cerner/terra-functional-testing",
   "version": "3.3.0",
-  "main": "lib/index.js",
   "description": "A functional testing utility for applications built using Terra.",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "Cerner Corporation",
+  "main": "lib/index.js",
   "engines": {
     "node": "^12.0.0 || ^14.0.0"
   },
-  "files": [
-    "bin",
-    "lib",
-    "NOTICE",
-    "LICENSE",
-    "*.md"
-  ],
-  "scripts": {
-    "compile": "babel src --out-dir lib --copy-files --ignore src/terra-cli",
-    "lint": "eslint --ext .js,.jsx --ignore-path ../../.eslintignore .",
-    "jest": "jest --config ../../jest.config.js",
-    "precompile": "rm -rf lib",
-    "prepare": "npm run compile",
-    "premocha": "rm -rf tests/tmp",
-    "mocha": "MOCHA=true mocha --require @babel/register tests/mocha/**/unit/**/*.test.js",
-    "test": "npm run jest && npm run mocha"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-toolkit",
+    "url": "git+https://github.com/cerner/terra",
     "directory": "packages/terra-functional-testing"
   },
+  "bugs": {
+    "url": "https://github.com/cerner/terra/issues"
+  },
+  "homepage": "https://github.com/cerner/terra#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
   "keywords": [
     "Cerner",
     "Terra",
     "Terra Toolkit",
-    "terra-toolkit",
-    "terra-functional-testing"
+    "terra-functional-testing",
+    "terra-toolkit"
   ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/cerner/terra-toolkit/issues"
-  },
-  "homepage": "https://github.com/cerner/terra-toolkit#readme",
+  "files": [
+    "*.md",
+    "bin",
+    "lib",
+    "LICENSE",
+    "NOTICE"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@mirzazeyrek/node-resemble-js": "^1.2.1",
@@ -83,11 +73,6 @@
     "webpack-dev-server": "^4.7.2",
     "which": "^2.0.2"
   },
-  "peerDependencies": {
-    "@cerner/terra-cli": "^1.0.0",
-    "webpack": "^4.43.0 || ^5.0.0",
-    "webpack-cli": "^3.3.12 || ^4.0.0"
-  },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@cerner/terra-cli": "^1.9.0",
@@ -101,5 +86,20 @@
     "np": "^6.3.2",
     "sinon": "^9.0.2",
     "yargs": "^16.1.1"
+  },
+  "peerDependencies": {
+    "@cerner/terra-cli": "^1.0.0",
+    "webpack": "^4.43.0 || ^5.0.0",
+    "webpack-cli": "^3.3.12 || ^4.0.0"
+  },
+  "scripts": {
+    "compile": "babel src --out-dir lib --copy-files --ignore src/terra-cli",
+    "lint": "eslint --ext .js,.jsx --ignore-path ../../.eslintignore .",
+    "jest": "jest --config ../../jest.config.js",
+    "precompile": "rm -rf lib",
+    "prepare": "npm run compile",
+    "premocha": "rm -rf tests/tmp",
+    "mocha": "MOCHA=true mocha --require @babel/register tests/mocha/**/unit/**/*.test.js",
+    "test": "npm run jest && npm run mocha"
   }
 }

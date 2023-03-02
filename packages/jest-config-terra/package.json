@@ -2,39 +2,34 @@
   "name": "@cerner/jest-config-terra",
   "version": "1.5.0",
   "description": "A base jest config for the terra application framework.",
-  "main": "jest.config.js",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cerner/terra-toolkit.git",
-    "directory": "packages/jest-config-terra"
-  },
-  "keywords": [
-    "jest",
-    "jest-config",
-    "Cerner",
-    "Terra"
-  ],
   "author": "Cerner Corporation",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/cerner/terra-toolkit/issues"
-  },
+  "main": "jest.config.js",
   "engines": {
     "node": ">=10.13.0"
   },
-  "homepage": "https://github.com/cerner/terra-toolkit",
-  "files": [
-    "lib",
-    "jest.config.js"
-  ],
-  "scripts": {
-    "compile": "babel src --out-dir lib --copy-files --ignore src",
-    "lint": "eslint --ext .js,.jsx .",
-    "jest": "jest --config ../../jest.config.js"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra.git",
+    "directory": "packages/jest-config-terra"
   },
+  "bugs": {
+    "url": "https://github.com/cerner/terra/issues"
+  },
+  "homepage": "https://github.com/cerner/terra",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "jest",
+    "jest-config",
+    "Terra"
+  ],
+  "files": [
+    "jest.config.js",
+    "lib"
+  ],
   "dependencies": {
     "@cerner/terra-cli": "^1.9.0",
     "@jest/reporters": "^25.3.0",
@@ -46,5 +41,10 @@
   },
   "peerDependencies": {
     "jest": "^26.6.3"
+  },
+  "scripts": {
+    "compile": "babel src --out-dir lib --copy-files --ignore src",
+    "lint": "eslint --ext .js,.jsx .",
+    "jest": "jest --config ../../jest.config.js"
   }
 }

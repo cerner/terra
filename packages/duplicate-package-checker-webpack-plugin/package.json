@@ -2,35 +2,33 @@
   "name": "@cerner/duplicate-package-checker-webpack-plugin",
   "version": "2.3.0",
   "description": "Webpack plugin that warns you when multiple versions of the same package exist in a build.",
+  "author": "Cerner Corporation",
   "main": "lib/index.js",
   "engines": {
     "node": ">=10"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra.git",
+    "directory": "packages/duplicate-package-checker-webpack-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/cerner/terra/issues"
+  },
+  "homepage": "https://github.com/cerner/terra",
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cerner/terra-toolkit.git",
-    "directory": "packages/duplicate-package-checker-webpack-plugin"
-  },
+  "license": "Apache-2.0",
   "keywords": [
     "Cerner",
-    "Terra",
     "duplicate-package-checker-webpack-plugin",
+    "Terra",
     "webpack"
   ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/cerner/terra-toolkit/issues"
-  },
-  "scripts": {
-    "compile": "babel src --out-dir lib --copy-files --ignore src",
-    "jest": "jest --config ../../jest.config.js",
-    "lint": "eslint --ext .js,.jsx .",
-    "test": "npm run jest"
-  },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "chalk": "^4.1.0",
     "find-root": "^1.0.0",
@@ -40,8 +38,10 @@
   "peerDependencies": {
     "webpack": "^4.30.0 || ^5.0.0"
   },
-  "homepage": "https://github.com/cerner/terra-toolkit",
-  "files": [
-    "lib"
-  ]
+  "scripts": {
+    "compile": "babel src --out-dir lib --copy-files --ignore src",
+    "jest": "jest --config ../../jest.config.js",
+    "lint": "eslint --ext .js,.jsx .",
+    "test": "npm run jest"
+  }
 }

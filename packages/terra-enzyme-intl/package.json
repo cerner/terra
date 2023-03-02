@@ -2,45 +2,48 @@
   "name": "@cerner/terra-enzyme-intl",
   "version": "4.6.1",
   "description": "Enzyme helpers for fortifying tests that depend on react-intl by decoupling the need for actual translations.",
+  "author": "Cerner Corporation",
   "main": "lib/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
   "engines": {
     "node": ">=10"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-toolkit.git",
+    "url": "git+https://github.com/cerner/terra.git",
     "directory": "packages/terra-enzyme-intl"
   },
+  "bugs": {
+    "url": "https://github.com/cerner/terra/issues"
+  },
+  "homepage": "https://github.com/cerner/terra/packages/terra-enzyme-intl#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
   "keywords": [
     "Cerner",
-    "Terra",
-    "terra-enzyme-intl",
-    "jest",
     "enzyme",
+    "i18n",
+    "intl",
+    "jest",
     "react",
     "react-intl",
-    "i18n",
-    "intl"
+    "Terra",
+    "terra-enzyme-intl"
   ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
-  "homepage": "https://github.com/cerner/terra-toolkit/packages/terra-enzyme-intl#readme",
-  "bugs": {
-    "url": "https://github.com/cerner/terra-toolkit/issues"
-  },
   "files": [
     "lib"
   ],
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "react-intl": "^5.10.6"
+  },
   "peerDependencies": {
     "enzyme": "3.x",
     "react": "16.x",
     "react-intl": ">= 5.10.6"
-  },
-  "devDependencies": {
-    "react-intl": "^5.10.6"
   },
   "scripts": {
     "clean:install": "npm run clean && npm install",
@@ -49,8 +52,5 @@
     "lint": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest"
-  },
-  "dependencies": {
-    "prop-types": "^15.7.2"
   }
 }

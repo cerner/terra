@@ -25,23 +25,28 @@ const coreConfig = () => ({
             filePath: path.resolve(process.cwd(), 'README.md'),
           },
         ],
-      }, {
-        path: '/about',
-        label: 'About',
-        contentExtension: 'about',
-      }, {
+      },
+      // {
+      //   path: '/about',
+      //   label: 'About',
+      //   contentExtension: 'about',
+      // },
+      
+      {
         path: '/application',
         label: 'Application',
         contentExtension: 'app',
-      }, {
-        path: '/components',
-        label: 'Components',
-        contentExtension: 'doc',
-      }, {
-        path: '/graphs',
-        label: 'Graphs',
-        contentExtension: 'graph',
-      }, {
+      },
+      // {
+      //   path: '/components',
+      //   label: 'Components',
+      //   contentExtension: 'doc',
+      // }, {
+      //   path: '/graphs',
+      //   label: 'Graphs',
+      //   contentExtension: 'graph',
+      // }, 
+      {
         path: '/dev_tools',
         label: 'Developer Tools',
         contentExtension: 'tool',

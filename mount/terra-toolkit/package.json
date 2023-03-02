@@ -1,0 +1,134 @@
+{
+  "name": "terra-toolkit",
+  "private": true,
+  "version": "5.25.0",
+  "description": "Utilities to help when developing terra modules.",
+  "engines": {
+    "node": "^10.0.0 || ^12.0.0 || ^14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-toolkit"
+  },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Terra Toolkit",
+    "terra-toolkit",
+    "UI"
+  ],
+  "browserslist": [
+    "iOS >= 12",
+    "last 2 and_chr versions",
+    "last 2 android versions",
+    "last 2 chrome versions",
+    "last 2 edge versions",
+    "last 2 firefox versions",
+    "last 2 ie versions",
+    "last 2 safari versions"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-toolkit/issues"
+  },
+  "package-json-lint": {
+    "extends": "./packages/package-json-lint-config-terra/package-json-lint.config.js",
+    "projectType": "devModule",
+    "rules": {
+      "require-no-hard-coded-dependency-versions": {
+        "severityType": "error",
+        "allowList": [
+          "eslint-plugin-react",
+          "axe-core",
+          "inquirer"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": "./packages/eslint-config-terra/eslint.config.js",
+    "overrides": [
+      {
+        "files": [
+          "./packages/terra-functional-testing/tests/mocha/services/wdio-visual-regression-service/**/*.js"
+        ],
+        "env": {
+          "mocha": true,
+          "node": true
+        },
+        "rules": {
+          "prefer-arrow-callback": "off",
+          "func-names": "off",
+          "import/no-extraneous-dependencies": [
+            "error",
+            {
+              "devDependencies": true
+            }
+          ],
+          "space-before-function-paren": "off"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "bootstrap:hoist": "lerna bootstrap --hoist --force-local",
+    "clean:install": "rm package-lock.json; npm run clean && npm install",
+    "clean": "lerna clean --yes && rm -rf node_modules || true",
+    "compile:prod": "rm -rf ./build; NODE_ENV=production webpack --mode=production --config webpack.dev-site.config.js",
+    "compile": "lerna run compile --parallel",
+    "danger": "danger ci",
+    "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
+    "heroku-prebuild": "npx lerna init",
+    "jest": "jest",
+    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:package-json": "npm run terra -- package-json-lint",
+    "lint": "npm run lint:js && npm run lint:package-json",
+    "mocha": "cd packages/terra-functional-testing && npm run mocha",
+    "pack": "webpack --mode=production",
+    "postinstall": "npm run compile && npm run bootstrap:hoist",
+    "prepare-for-release": "npm run terra -- prepare-for-release",
+    "start": "webpack serve --config webpack.dev-site.config.js",
+    "start-heroku": "npm run terra -- express-server --port $PORT --site './build' ",
+    "terra": "node ./packages/terra-cli/bin/terra",
+    "test": "npm run lint && npm run jest && npm run mocha && npm run wdio",
+    "wdio-site": "npm run terra -- wdio --site build --browsers chrome firefox --locales en fr --formFactors small large",
+    "wdio-webpack": "npm run terra -- wdio",
+    "wdio": "rm -rf build && npm run pack && npm run wdio-site && npm run wdio-webpack"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/helpers": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-syntax-async-generators": "^7.8.4",
+    "@babel/plugin-transform-regenerator": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.10.5",
+    "@cerner/terra-application": "cerner/terra-application#869470a0cc93cb4eb4e3494ebe543c4405441ca4",
+    "@cerner/terra-dev-site": "cerner/terra-dev-site#terra-dev-site-v7",
+    "@octokit/core": "^3.1.2",
+    "bufferutil": "^4.0.1",
+    "commander": "^5.1.0",
+    "danger": "^11.2.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^7.19.0",
+    "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.0.1",
+    "lerna": "^6.4.1",
+    "memory-fs": "^0.5.0",
+    "postcss": "^8.2.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^5.10.6",
+    "stylelint": "^13.0.0",
+    "utf-8-validate": "^5.0.2",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^4.7.2"
+  }
+}

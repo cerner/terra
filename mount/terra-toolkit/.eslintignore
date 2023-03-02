@@ -1,0 +1,6 @@
+node_modules
+build
+reports
+lib
+**/aggregated-translations/*.*
+dist

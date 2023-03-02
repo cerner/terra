@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index declares the wdio terra-cli command with proper command level help 1`] = `
+"terra wdio
+
+Run wdio tests
+
+Options:
+      --version                         Show version number            [boolean]
+      --help                            Show help                      [boolean]
+      --assetServerPort                 The port to run the webpack and express
+                                        asset services on.
+                                                  [number] [default: (_default)]
+      --browsers                        A list of browsers for the test run.
+                                                   [array] [default: (_default)]
+      --buildBranch                     The type of branch being built
+                                                  [string] [default: (_default)]
+      --buildType                       The cause of branch being built
+                                                  [string] [default: (_default)]
+      --buildUrl                        Url for CI build output
+                                                  [string] [default: (_default)]
+  -c, --config                          A file path to the test runner
+                                        configuration.                  [string]
+      --disableSeleniumService          A flag to disable the selenium docker
+                                        service.      [boolean] [default: false]
+      --externalHost                    The host address the testing environment
+                                        is connected to.
+                                                  [string] [default: (_default)]
+      --externalPort                    The port mapping from the host to the
+                                        container.[number] [default: (_default)]
+      --formFactors                     A list of form factors for the test run.
+                                                   [array] [default: (_default)]
+      --gitApiUrl                       URL to use for git api.
+                                                  [string] [default: (_default)]
+      --gitToken                                  [string] [default: (_default)]
+      --gridUrl                         The remote selenium grid address.
+                                                  [string] [default: (_default)]
+      --ignoreScreenshotMismatch        A flag to ignore screenshot mismatch.
+                                                      [boolean] [default: false]
+      --issueNumber                     The pull request issue number
+                                                  [number] [default: (_default)]
+      --keepAliveSeleniumDockerService  Determines to keep the selenium docker
+                                        service running upon test completion.
+                                                      [boolean] [default: false]
+      --locales                         A list of language locales for the test
+                                        run.       [array] [default: (_default)]
+      --screenshotUrl                   The url to the registry that stores the
+                                        screenshots
+                                                  [string] [default: (_default)]
+      --seleniumServicePort             The port mapping for the selenium
+                                        service or the external selenium grid.
+                                                  [number] [default: (_default)]
+      --seleniumServiceUrl              The address for the selenium service.
+                                                  [string] [default: (_default)]
+      --site                            A file path to a static directory of
+                                        assets. When defined, an express server
+                                        will launch to serve the assets and
+                                        disable running webpack.
+                                                  [string] [default: (_default)]
+      --spec                            A list of spec file paths.       [array]
+      --suite                           Overrides specs and runs only the
+                                        defined suites.                  [array]
+      --themes                          A list of themes for the test run.
+                                                   [array] [default: (_default)]
+  -u, --updateScreenshots               Whether or not to automatically update
+                                        all reference screenshots with the
+                                        latest screenshots.
+                                                      [boolean] [default: false]
+      --useRemoteReferenceScreenshots   A flag to download reference screenshots
+                                        from a remote site for screenshot
+                                        comparisons instead of using the local
+                                        reference screenshots.
+                                                      [boolean] [default: false]
+      --useSeleniumStandaloneService    A flag to use the selenium standalone
+                                        service instead of the selenium docker
+                                        service.      [boolean] [default: false]"
+`;
+
+exports[`index declares the wdio terra-cli command with proper top level help 1`] = `
+"terra [command]
+
+Commands:
+  terra wdio  Run wdio tests
+
+Options:
+  --version  Show version number                                       [boolean]
+  --help     Show help                                                 [boolean]"
+`;

@@ -8,7 +8,7 @@ Object {
     "version": undefined,
   },
   "end": undefined,
-  "packageName": "terra-toolkit",
+  "packageName": "terra",
   "spec": "/mock/spec",
   "start": undefined,
   "suites": Array [

@@ -213,6 +213,8 @@
   "scripts": {
     "bootstrap:hoist": "lerna bootstrap --hoist --force-local --nohoist=one-cerner-style-icons",
     "clean": "lerna clean --yes && rm -rf node_modules || true",
+    "clean:all": "npm run clean:build && npm run clean",
+    "clean:build": "rm -rf ./**/lib",
     "clean:install": "npm run clean && npm install",
     "compile": "npm run compile:clean && npm run compile:build",
     "compile:build": "lerna run compile --parallel",

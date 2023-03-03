@@ -70,12 +70,12 @@
     "wicg-inert": "3.1.2"
   },
   "devDependencies": {
-    "@cerner/terra-enzyme-intl": "^4.0.0"
+    "@cerner/terra-enzyme-intl": "^4.6.0"
   },
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-intl": "^5.8.2"
+    "react-intl": "^5.25.1"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

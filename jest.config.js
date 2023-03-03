@@ -1,4 +1,4 @@
-const jestConfig = require('./jest-config-terra');
+const jestConfig = require('./packages/jest-config-terra');
 
 module.exports = {
   ...jestConfig,

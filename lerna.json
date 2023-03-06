@@ -1,6 +1,6 @@
 {
   "version": "independent",
-    "loglevel":"silly",
+    "loglevel":"warn",
   "packages": [
     "packages/*"
   ]

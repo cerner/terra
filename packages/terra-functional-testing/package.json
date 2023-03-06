@@ -100,6 +100,8 @@
     "webpack-cli": "^3.3.12 || ^4.0.0"
   },
   "scripts": {
+    "clean:all": "rm -rf node_modules && npm run clean:build",
+    "clean:build": "rm -rf lib",
     "compile": "babel src --out-dir lib --copy-files --ignore src/terra-cli",
     "lint": "eslint --ext .js,.jsx --ignore-path ../../.eslintignore .",
     "jest": "jest --config ../../jest.config.js",

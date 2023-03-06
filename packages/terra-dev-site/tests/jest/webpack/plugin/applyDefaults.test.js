@@ -39,7 +39,7 @@ describe('applyDefault', () => {
     expect(config.sideEffectImportFilePaths).toEqual([
       '@cerner/terra-polyfill',
     ]);
-    expect(config.titleConfig).toEqual({ title: 'Terra Application Mono' });
+    expect(config.titleConfig).toEqual({ title: 'Terra' });
     expect(config.faviconFilePath).toEqual(path.join(__dirname, '..', '..', '..', '..', 'src', 'webpack', 'terra-favicon', '32px', 'favicon.ico'));
     expect(config.extensionItems).toEqual([]);
     expect(config.headHtml).toEqual([]);

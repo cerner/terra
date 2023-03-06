@@ -35,15 +35,15 @@
     "lib"
   ],
   "dependencies": {
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "react-intl": "^5.10.6"
+    "react-intl": "^5.25.1"
   },
   "peerDependencies": {
     "enzyme": "3.x",
     "react": "16.x",
-    "react-intl": ">= 5.10.6"
+    "react-intl": "^5.25.1"
   },
   "scripts": {
     "clean:install": "npm run clean && npm install",

@@ -38,15 +38,15 @@
     "tt-aggregate-translations": "bin/aggregate-translations-cli.js"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "commander": "^3.0.1",
-    "fs-extra": "^8.0.1",
-    "glob": "^7.1.1",
+    "chalk": "^4.1.0",
+    "commander": "^5.1.0",
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
     "lodash.startcase": "^4.4.0"
   },
   "peerDependencies": {
     "intl": "^1.2.5",
-    "react-intl": "^5.8.2"
+    "react-intl": "^5.25.1"
   },
   "scripts": {
     "clean:install": "npm run clean && npm install",

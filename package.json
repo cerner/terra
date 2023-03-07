@@ -47,8 +47,8 @@
         "overrides": [
             {
                 "files": [
-                    "./terra-functional-testing/tests/mocha/services/wdio-visual-regression-service/**/*.js",
-                    "./**/jest/**/*",
+                    "packages/terra-functional-testing/tests/mocha/services/wdio-visual-regression-service/**/*.js",
+                    "packages/**/jest/**/*",
                     "carbon-graphs/**/*.jsx",
                     "carbon-graphs/src/components/**/*.jsx"
                 ],

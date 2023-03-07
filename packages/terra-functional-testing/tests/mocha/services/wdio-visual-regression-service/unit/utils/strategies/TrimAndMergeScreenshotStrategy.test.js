@@ -7,9 +7,9 @@ import dimensionScrollHorizontal from '../../../../../../fixtures/dimension/desk
 import dimensionScrollVertical from '../../../../../../fixtures/dimension/desktop-scroll-vertical.json';
 import dimensionsIpadAir92LandscapeZoomed from '../../../../../../fixtures/dimension/iOS_iPad_Air_9_2_landscape_zoomed.json';
 
-describe('TrimAndMergeScreenshotStrategy', function() {
-  context('full page', function() {
-    it('handles vertical scroll & crop', function() {
+describe('TrimAndMergeScreenshotStrategy', () => {
+  context('full page', () => {
+    it('handles vertical scroll & crop', () => {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollVertical);
       const crop = {
@@ -56,7 +56,7 @@ describe('TrimAndMergeScreenshotStrategy', function() {
       testStrategy(strategy, steps);
     });
 
-    it('handles horizontal scroll & crop', function() {
+    it('handles horizontal scroll & crop', () => {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollHorizontal);
       const crop = {
@@ -98,7 +98,7 @@ describe('TrimAndMergeScreenshotStrategy', function() {
       testStrategy(strategy, steps);
     });
 
-    it('handles horizontal & vertical scroll & crop', function() {
+    it('handles horizontal & vertical scroll & crop', () => {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollBoth);
       const crop = {
@@ -203,8 +203,8 @@ describe('TrimAndMergeScreenshotStrategy', function() {
     });
   });
 
-  context('area specific screenshots', function() {
-    it('handles vertical scroll & crop', function() {
+  context('area specific screenshots', () => {
+    it('handles vertical scroll & crop', () => {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollVertical);
       const crop = {
@@ -251,7 +251,7 @@ describe('TrimAndMergeScreenshotStrategy', function() {
       testStrategy(strategy, steps);
     });
 
-    it('handles horizontal scroll & crop', function() {
+    it('handles horizontal scroll & crop', () => {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollHorizontal);
       const crop = {
@@ -297,7 +297,7 @@ describe('TrimAndMergeScreenshotStrategy', function() {
       testStrategy(strategy, steps);
     });
 
-    it('handles horizontal & vertical scroll & crop', function() {
+    it('handles horizontal & vertical scroll & crop', () => {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollBoth);
       const crop = {
@@ -361,9 +361,9 @@ describe('TrimAndMergeScreenshotStrategy', function() {
     });
   });
 
-  context('iOS - scaled websites', function() {
-    context('full page', function() {
-      it('handles vertical scroll & crop', function() {
+  context('iOS - scaled websites', () => {
+    context('full page', () => {
+      it('handles vertical scroll & crop', () => {
         // given
         const screenDimensions = new ScreenDimension(dimensionsIpadAir92LandscapeZoomed, { isIOS: true });
         const crop = {
@@ -410,8 +410,8 @@ describe('TrimAndMergeScreenshotStrategy', function() {
       });
     });
 
-    context('area specific screenshots', function() {
-      it('handles vertical scroll & crop', function() {
+    context('area specific screenshots', () => {
+      it('handles vertical scroll & crop', () => {
         // given
         const screenDimensions = new ScreenDimension(dimensionsIpadAir92LandscapeZoomed, { isIOS: true });
         const crop = {

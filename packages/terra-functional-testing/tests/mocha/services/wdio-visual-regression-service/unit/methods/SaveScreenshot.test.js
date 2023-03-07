@@ -22,22 +22,22 @@ function pause(ms) {
   });
 }
 
-describe('SaveScreenshot', function() {
-  beforeEach(async function() {
+describe('SaveScreenshot', () => {
+  beforeEach(async () => {
     await fs.remove(dirTmp);
   });
 
-  after(async function() {
+  after(async () => {
     await fs.remove(dirTmp);
   });
 
-  it('creates a instance of BaseCompare', async function() {
+  it('creates a instance of BaseCompare', async () => {
     const saveScreenshot = new SaveScreenshot({});
     assert.instanceOf(saveScreenshot, BaseCompare, 'SaveScreenshot should extend BaseCompare');
   });
 
-  context('processScreenshot', function() {
-    beforeEach(async function() {
+  context('processScreenshot', () => {
+    beforeEach(async function () {
       this.referencFile = path.join(dirTmp, 'reference.png');
       this.getReferenceFile = stub().returns(this.referencFile);
 
@@ -50,7 +50,7 @@ describe('SaveScreenshot', function() {
       };
     });
 
-    it('creates a reference file for the first run', async function() {
+    it('creates a reference file for the first run', async function () {
       const context = {};
       const base64Screenshot = await readAsBase64(path.join(dirFixture, 'image/100x100.png'));
 
@@ -68,7 +68,7 @@ describe('SaveScreenshot', function() {
       assert.isTrue(existsReference, 'Reference screenshot should exist');
     });
 
-    it('updates the reference image when changes are in tolerance', async function() {
+    it('updates the reference image when changes are in tolerance', async function () {
       const context = {};
       const base64Screenshot = await readAsBase64(path.join(dirFixture, 'image/100x100.png'));
 
@@ -111,7 +111,7 @@ describe('SaveScreenshot', function() {
       assert.isAbove(statsSecond.mtime.getTime(), statsFirst.mtime.getTime(), 'File should be modified');
     });
 
-    it('updates the reference image when changes are not in tolerance', async function() {
+    it('updates the reference image when changes are not in tolerance', async function () {
       const context = {};
       const base64ScreenshotReference = await readAsBase64(path.join(dirFixture, 'image/100x100.png'));
       const base64ScreenshotNew = await readAsBase64(path.join(dirFixture, 'image/100x100-rotated.png'));

@@ -22,8 +22,8 @@ async function readAsBase64(file) {
   return new Buffer(content).toString('base64'); // eslint-disable-line no-buffer-constructor
 }
 
-describe('scaleImage', function() {
-  it('scales image down', async function() {
+describe('scaleImage', () => {
+  it('scales image down', async () => {
     // given
     const base64ImageInput = await readAsBase64(imageBase);
     const imageTest = path.join(tmpPath, 'scaled-down-image.png');
@@ -36,7 +36,7 @@ describe('scaleImage', function() {
     await compareImages(imageTest, imageScaledDown);
   });
 
-  it('scales more complex image down', async function() {
+  it('scales more complex image down', async () => {
     // given
     const base64ImageInput = await readAsBase64(imageIphoneBase);
     const imageTest = path.join(tmpPath, 'iOS_iPhone_scaled_down.png');

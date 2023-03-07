@@ -2,8 +2,8 @@ import { assert } from 'chai';
 
 import groupBoundingRect from '../../../../../../src/services/wdio-visual-regression-service/utils/groupBoundingRect';
 
-describe('groupBoundingRect', function() {
-  it('should return empty object when an empty array is passed in', function() {
+describe('groupBoundingRect', () => {
+  it('should return empty object when an empty array is passed in', () => {
     // given
     // const given = [];
 
@@ -14,7 +14,7 @@ describe('groupBoundingRect', function() {
     assert.deepEqual(grouped, {});
   });
 
-  it('should return an equal bounding rect when a single item is passed in', function() {
+  it('should return an equal bounding rect when a single item is passed in', () => {
     // given
     const expected = {
       top: 0,
@@ -31,7 +31,7 @@ describe('groupBoundingRect', function() {
     assert.deepEqual(grouped, expected);
   });
 
-  it('should return the bounding box when multiple bounding rects are passed in', function() {
+  it('should return the bounding box when multiple bounding rects are passed in', () => {
     // given
     const expected = {
       top: 0,

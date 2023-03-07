@@ -7,9 +7,6 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: 14.x
-    - name: Clean Environment
+    - name: Clean and Install Dependencies # https://docs.npmjs.com/cli/v9/commands/npm-ci
       shell: bash
-      run: npm run clean
-    - name: Install Dependencies
-      shell: bash
-      run: npm install
+      run: npm ci

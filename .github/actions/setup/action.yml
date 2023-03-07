@@ -1,0 +1,12 @@
+name: Setup Project
+description: Steps neccessary to setup the project
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node 14.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14.x
+    - name: Clean and Install Dependencies # https://docs.npmjs.com/cli/v9/commands/npm-ci
+      shell: bash
+      run: npm ci

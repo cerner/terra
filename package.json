@@ -35,7 +35,7 @@
         "extends @cerner/browserslist-config-terra"
     ],
     "eslintConfig": {
-        "extends": "./eslint-config-terra/eslint.config.js",
+        "extends": "./packages/eslint-config-terra/eslint.config.js",
         "rules": {
             "react/forbid-prop-types": "off",
             "import/no-extraneous-dependencies": "off",

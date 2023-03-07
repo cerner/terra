@@ -14,7 +14,7 @@ describe('LocalPackageAliasPlugin', () => {
 
     expect(plugin.alias).toEqual([
       {
-        name: 'terra-application-mono',
+        name: 'terra',
         onlyModule: false,
         alias: processPath,
       },

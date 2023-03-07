@@ -136,7 +136,7 @@ describe('Spec Reporter', () => {
       const packageName = SpecReporter.getPackageName('/terra-toolkit/tests/wdio/specs.js');
 
       expect(fs.existsSync).toHaveBeenCalled();
-      expect(packageName).toEqual('terra-toolkit');
+      expect(packageName).toEqual('terra');
     });
   });
 

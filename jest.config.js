@@ -1,10 +1,10 @@
-const jestConfig = require('./jest-config-terra');
+const jestConfig = require('./packages/jest-config-terra');
 
 module.exports = {
   ...jestConfig,
   coveragePathIgnorePatterns: [
     ...jestConfig.coveragePathIgnorePatterns,
-    './terra-polyfill/src/index.js',
+    './packages/terra-polyfill/src/index.js',
   ],
   globalSetup: './jest.globalSetup.js',
   moduleDirectories: [

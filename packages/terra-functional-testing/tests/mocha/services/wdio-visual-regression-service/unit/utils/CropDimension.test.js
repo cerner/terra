@@ -2,15 +2,15 @@ import { assert } from 'chai';
 
 import CropDimension from '../../../../../../src/services/wdio-visual-regression-service/utils/CropDimension';
 
-describe('CropDimension', () => {
-  before(function () {
+describe('CropDimension', function() {
+  before(function() {
     this.width = 1024;
     this.height = 768;
     this.x = 10;
     this.y = 10;
   });
 
-  it('returns all sizes', function () {
+  it('returns all sizes', function() {
     const cropDimension = new CropDimension(this.width, this.height, this.x, this.y, true, 0);
 
     assert.strictEqual(cropDimension.getWidth(), this.width);
@@ -19,21 +19,21 @@ describe('CropDimension', () => {
     assert.strictEqual(cropDimension.getY(), this.y);
   });
 
-  it('returns rotation', function () {
+  it('returns rotation', function() {
     const rotation = 10;
     const cropDimension = new CropDimension(this.width, this.height, this.x, this.y, true, rotation);
 
     assert.strictEqual(cropDimension.getRotation(), rotation);
   });
 
-  it('returns gravity "NorthWest" for top=true', function () {
+  it('returns gravity "NorthWest" for top=true', function() {
     const top = true;
     const cropDimension = new CropDimension(this.width, this.height, this.x, this.y, top, 0);
 
     assert.strictEqual(cropDimension.getGravity(), 'NorthWest');
   });
 
-  it('returns gravity "SouthWest" for top=false', function () {
+  it('returns gravity "SouthWest" for top=false', function() {
     const top = false;
     const cropDimension = new CropDimension(this.width, this.height, this.x, this.y, top, 0);
 

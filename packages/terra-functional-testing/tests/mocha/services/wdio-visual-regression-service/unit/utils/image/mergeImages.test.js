@@ -15,8 +15,8 @@ const imageMergedHorizontally = path.join(imagePath, 'merged', 'merged-image-hor
 const imageMergedVertically = path.join(imagePath, 'merged', 'merged-image-vertically.png');
 const imageMergedBoth = path.join(imagePath, 'merged', 'merged-image-both.png');
 
-describe('mergeImages', () => {
-  it('merges images - horizontally', async () => {
+describe('mergeImages', function() {
+  it('merges images - horizontally', async function() {
     // given
     const images = [[image100x100, image200x100]];
     const mergedImage = path.join(tmpPath, 'merged-image-test-horzontally.png');
@@ -29,7 +29,7 @@ describe('mergeImages', () => {
     await compareImages(mergedImage, imageMergedHorizontally);
   });
 
-  it('merges images - vertically', async () => {
+  it('merges images - vertically', async function() {
     // given
     const images = [[image100x100], [image100x100]];
     const mergedImage = path.join(tmpPath, 'merged-image-test-vertically.png');
@@ -42,7 +42,7 @@ describe('mergeImages', () => {
     await compareImages(mergedImage, imageMergedVertically);
   });
 
-  it('merges images - both', async () => {
+  it('merges images - both', async function() {
     // given
     const images = [[image100x100, image200x100], [image200x100, image100x100]];
     const mergedImage = path.join(tmpPath, 'merged-image-test-both.png');

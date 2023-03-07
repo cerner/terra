@@ -8,7 +8,7 @@ const coreConfig = () => ({
     fallback: {
       fs: false,
       path: require.resolve('path'),
-    },
+    }
   },
   plugins: [
     new TerraDevSite({
@@ -31,7 +31,7 @@ const coreConfig = () => ({
       //   label: 'About',
       //   contentExtension: 'about',
       // },
-
+      
       {
         path: '/application',
         label: 'Application',
@@ -45,7 +45,7 @@ const coreConfig = () => ({
       //   path: '/graphs',
       //   label: 'Graphs',
       //   contentExtension: 'graph',
-      // },
+      // }, 
       {
         path: '/dev_tools',
         label: 'Developer Tools',
@@ -59,10 +59,10 @@ const coreConfig = () => ({
         label: 'Tests',
         contentExtension: 'test',
       }],
-      //      sideEffectImportFilePaths: [
-      //        '../../../../terra-ui-repo/src/initializeXFC.js',
-      //        '../../../../terra-ui-repo/src/IllustrationGrid.scss',
-      //      ],
+//      sideEffectImportFilePaths: [
+//        '../../../../terra-ui-repo/src/initializeXFC.js',
+//        '../../../../terra-ui-repo/src/IllustrationGrid.scss',
+//      ],
 
     }),
   ],

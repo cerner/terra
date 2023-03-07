@@ -25,8 +25,8 @@ async function readAsBase64(file) {
   return new Buffer(content).toString('base64'); // eslint-disable-line no-buffer-constructor
 }
 
-describe('cropImage', () => {
-  it('throws error when invalid crop dimensions are provided', async () => {
+describe('cropImage', function() {
+  it('throws error when invalid crop dimensions are provided', async function() {
     try {
       await cropImage('', {});
     } catch (err) {
@@ -34,7 +34,7 @@ describe('cropImage', () => {
     }
   });
 
-  it('crops image', async () => {
+  it('crops image', async function() {
     // given
     const base64ImageInput = await readAsBase64(imageBase);
     const cropDimension = new CropDimension(120, 80, 10, 10, true, 0);
@@ -48,7 +48,7 @@ describe('cropImage', () => {
     await compareImages(imageTest, imageCropped);
   });
 
-  it('crops image with rotation', async () => {
+  it('crops image with rotation', async function() {
     // given
     const base64ImageInput = await readAsBase64(imageBase);
     const cropDimension = new CropDimension(100, 120, 0, 0, true, 90);
@@ -62,7 +62,7 @@ describe('cropImage', () => {
     await compareImages(imageTest, imageRotated);
   });
 
-  it('crops image with gravity "NorthWest"', async () => {
+  it('crops image with gravity "NorthWest"', async function() {
     // given
     const base64ImageInput = await readAsBase64(imageBase);
     const cropDimension = new CropDimension(120, 80, 5, 5, true, 0);
@@ -76,7 +76,7 @@ describe('cropImage', () => {
     await compareImages(imageTest, imageGravityNorthWest);
   });
 
-  it('crops image with gravity "SouthWest"', async () => {
+  it('crops image with gravity "SouthWest"', async function() {
     // given
     const base64ImageInput = await readAsBase64(imageBase);
     const cropDimension = new CropDimension(120, 80, 5, 5, false, 0);

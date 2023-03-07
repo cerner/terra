@@ -25,9 +25,9 @@ async function readAsBase64(file) {
   return new Buffer(content).toString('base64'); // eslint-disable-line no-buffer-constructor
 }
 
-describe('normalizeScreenshot', () => {
-  context('default browser behaviour', () => {
-    beforeEach(function () {
+describe('normalizeScreenshot', function() {
+  context('default browser behaviour', function() {
+    beforeEach(function() {
       this.browser = {
         isMobile: false,
         isIOS: false,
@@ -37,14 +37,14 @@ describe('normalizeScreenshot', () => {
       this.base64Screenshot = 'base64Screenshot';
     });
 
-    it('just returns the same screenshot', async function () {
+    it('just returns the same screenshot', async function() {
       const screenshot = await normalizeScreenshot(this.browser, this.screenDimensions, this.base64Screenshot);
 
       assert.strictEqual(screenshot, this.base64Screenshot, 'screenshots should not be transformed');
     });
   });
 
-  context('MacbookProRetina', () => {
+  context('MacbookProRetina', function() {
     const baseDir = path.join(screenshotDir, 'MacbookProRetina');
     const files = glob.sync('**/screenshot.png', { cwd: baseDir });
 
@@ -62,8 +62,8 @@ describe('normalizeScreenshot', () => {
     lodashMap(data, ({
       browserName, screenshotFile, expectedScreenshotFile, dimensionsFile,
     }) => {
-      context(browserName, () => {
-        it('normalizes screenshot', async () => {
+      context(browserName, function() {
+        it('normalizes screenshot', async function() {
           const browser = {
             isMobile: false,
             isIOS: true,
@@ -85,7 +85,7 @@ describe('normalizeScreenshot', () => {
     });
   });
 
-  context('iOS', () => {
+  context('iOS', function() {
     const iOSDir = path.join(screenshotDir, 'iOS');
     const files = glob.sync('**/screenshot.png', { cwd: iOSDir });
 
@@ -111,13 +111,13 @@ describe('normalizeScreenshot', () => {
     const testData = lodashMapValues(lodashGroupBy(data, 'version'), list => lodashGroupBy(list, 'device'));
 
     lodashMapKeys(testData, (devices, version) => {
-      context(version, () => {
+      context(version, function() {
         lodashMapKeys(devices, (list, device) => {
-          context(device, () => {
+          context(device, function() {
             list.forEach(({
               test, screenshotFile, expectedScreenshotFile, dimensionsFile, skipFile, dir,
             }) => {
-              it(test, async function () {
+              it(test, async function() {
                 const browser = {
                   isMobile: true,
                   isIOS: true,

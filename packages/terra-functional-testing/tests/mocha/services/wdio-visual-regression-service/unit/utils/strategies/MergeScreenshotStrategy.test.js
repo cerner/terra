@@ -6,9 +6,9 @@ import dimensionScrollBoth from '../../../../../../fixtures/dimension/desktop-sc
 import dimensionScrollHorizontal from '../../../../../../fixtures/dimension/desktop-scroll-horizontal.json';
 import dimensionScrollVertical from '../../../../../../fixtures/dimension/desktop-scroll-vertical.json';
 
-describe('MergeScreenshotStrategy', () => {
-  context('full page', () => {
-    it('handles vertical scroll & crop', () => {
+describe('MergeScreenshotStrategy', function() {
+  context('full page', function() {
+    it('handles vertical scroll & crop', function() {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollVertical);
       const crop = {
@@ -50,7 +50,7 @@ describe('MergeScreenshotStrategy', () => {
       testStrategy(strategy, steps);
     });
 
-    it('handles horizontal scroll & crop', () => {
+    it('handles horizontal scroll & crop', function() {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollHorizontal);
       const crop = {
@@ -92,7 +92,7 @@ describe('MergeScreenshotStrategy', () => {
       testStrategy(strategy, steps);
     });
 
-    it('handles horizontal & vertical scroll & crop', () => {
+    it('handles horizontal & vertical scroll & crop', function() {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollBoth);
       const crop = {
@@ -184,8 +184,8 @@ describe('MergeScreenshotStrategy', () => {
     });
   });
 
-  context('area specific screenshots', () => {
-    it('handles vertical scroll & crop', () => {
+  context('area specific screenshots', function() {
+    it('handles vertical scroll & crop', function() {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollVertical);
       const crop = {
@@ -231,7 +231,7 @@ describe('MergeScreenshotStrategy', () => {
       testStrategy(strategy, steps);
     });
 
-    it('handles horizontal scroll & crop', () => {
+    it('handles horizontal scroll & crop', function() {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollHorizontal);
       const crop = {
@@ -277,7 +277,7 @@ describe('MergeScreenshotStrategy', () => {
       testStrategy(strategy, steps);
     });
 
-    it('handles horizontal & vertical scroll & crop', () => {
+    it('handles horizontal & vertical scroll & crop', function() {
       // given
       const screenDimensions = new ScreenDimension(dimensionScrollBoth);
       const crop = {

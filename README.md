@@ -8,6 +8,9 @@
   Terra
 </h1>
 
+[![Cerner OSS](https://badgen.net/badge/Cerner/OSS/blue)](http://engineering.cerner.com/2014/01/cerner-and-open-source/)
+[![Build Status](https://github.com/cerner/terra/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/cerner/terra/actions/workflows/ci-cd.yml)
+
 
 Terra is the core UI component library, unifying UX concepts and development across Cerner.
 

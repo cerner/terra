@@ -280,6 +280,7 @@
         "do the keywords need updating?",
         "fix wdio tests script",
         "add npm run wdio back to test script once fixed",
-        "update eslintconfig"
+        "update eslintconfig",
+        "postcss 8.4 and above causes stylelint errors, locked to 8.3.x"
     ]
 }

@@ -26,9 +26,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # https://github.com/danger/danger-js/issues/557#issuecomment-664851950
           DANGER_DISABLE_TRANSPILATION: true
-      # - name: Linting Project
-      #   run: |
-      #     npm run lint
+      - name: Linting Project
+        run: |
+          npm run lint
       - name: Testing Project
         run: |
           npm run jest
@@ -40,12 +40,12 @@ jobs:
   #     matrix:
   #       form-factor: [tiny, small, medium, large, huge, enormous]
   #       theme: [default, lowlight, fusion]
-      
+
   #   steps:
   #     - name: Checkout Project
   #       uses: actions/checkout@v3
   #     - name: Setup Project
-  #       uses: ./.github/actions/setup      
+  #       uses: ./.github/actions/setup
   #     - name: Compile Project Default
   #       run: |
   #         npm run compile:prod -- --output-path build/default

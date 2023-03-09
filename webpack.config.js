@@ -1,53 +1,75 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { merge } = require('webpack-merge');
+const { TerraDevSite } = require('@cerner/terra-dev-site');
+const WebpackConfigTerra = require('@cerner/webpack-config-terra');
 
-module.exports = (env = {}) => {
-  const { defaultLocale = 'en' } = env;
-
-  return {
-    entry: {
-      index: path.join(__dirname, 'index'),
+const coreConfig = () => ({
+  resolve: {
+    fallback: {
+      fs: false,
+      path: require.resolve('path'),
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        lang: defaultLocale,
-        template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'accessible.html'),
-        chunks: ['index'],
-        filename: 'accessible.html',
-      }),
-      new HtmlWebpackPlugin({
-        lang: defaultLocale,
-        template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'insufficient-color-contrast.html'),
-        chunks: ['index'],
-        filename: 'insufficient-color-contrast.html',
-      }),
-      new HtmlWebpackPlugin({
-        lang: defaultLocale,
-        template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'dispatch-custom-event.html'),
-        chunks: ['index'],
-        filename: 'dispatch-custom-event.html',
-      }),
-      new HtmlWebpackPlugin({
-        lang: defaultLocale,
-        template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'validates-element.html'),
-        chunks: ['index'],
-        filename: 'validates-element.html',
-      }),
-      new HtmlWebpackPlugin({
-        lang: defaultLocale,
-        template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'element-out-of-bound.html'),
-        chunks: ['index'],
-        filename: 'element-out-of-bound.html',
-      }),
-    ],
-    output: {
-      path: path.join(process.cwd(), 'build'),
-    },
-    devServer: {
-      devMiddleware: {
-        publicPath: '/',
+  },
+  plugins: [
+    new TerraDevSite({
+      titleConfig: {
+        title: 'Terra',
       },
-    },
-    mode: 'production',
-  };
-};
+      primaryNavigationItems: [{
+        path: '/home',
+        label: 'Home',
+        contentExtension: 'home',
+        additionalContent: [
+          {
+            label: 'Home',
+            filePath: path.resolve(process.cwd(), 'README.md'),
+          },
+        ],
+      },
+      // {
+      //   path: '/about',
+      //   label: 'About',
+      //   contentExtension: 'about',
+      // },
+
+      {
+        path: '/application',
+        label: 'Application',
+        contentExtension: 'app',
+      },
+      // {
+      //   path: '/components',
+      //   label: 'Components',
+      //   contentExtension: 'doc',
+      // }, {
+      //   path: '/graphs',
+      //   label: 'Graphs',
+      //   contentExtension: 'graph',
+      // },
+      {
+        path: '/dev_tools',
+        label: 'Developer Tools',
+        contentExtension: 'tool',
+      }, {
+        path: '/guides',
+        label: 'Guides',
+        contentExtension: 'guide',
+      }, {
+        path: '/tests',
+        label: 'Tests',
+        contentExtension: 'test',
+      }],
+      //      sideEffectImportFilePaths: [
+      //        '../../../../terra-ui-repo/src/initializeXFC.js',
+      //        '../../../../terra-ui-repo/src/IllustrationGrid.scss',
+      //      ],
+
+    }),
+  ],
+});
+
+const mergedConfig = (env, argv) => (
+  merge(WebpackConfigTerra(env, argv), coreConfig())
+);
+
+module.exports = mergedConfig;

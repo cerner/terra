@@ -4,7 +4,8 @@
     "author": "Cerner Corporation",
     "description": "Package hosting all of terra components",
     "engines": {
-        "node": "^10.0.0 || ^12.0.0 || ^14.0.0"
+        "node": "^10.0.0 || ^12.0.0 || ^14.0.0",
+        "npm": "^6.0.0"
     },
     "repository": {
         "type": "git",
@@ -105,14 +106,13 @@
         "@babel/register": "^7.10.5",
         "@babel/runtime": "^7.11.2",
         "@cerner/browserslist-config-terra": "^3.1.0",
-        "@cerner/eslint-config-terra": "^5.0.0",
+        "@cerner/eslint-config-terra": "^5.4.0",
         "@cerner/jest-config-terra": "^1.0.0",
         "@cerner/package-json-lint": "^1.3.0",
         "@cerner/package-json-lint-config-terra": "^1.2.0",
         "@cerner/stylelint-config-terra": "^4.0.0",
         "@cerner/terra-aggregate-translations": "^2.0.1",
-        "@cerner/terra-application": "cerner/terra-application#869470a0cc93cb4eb4e3494ebe543c4405441ca4",
-        "@cerner/terra-application-docs": "^2.0.0",
+        "@cerner/terra-application-docs": "^3.0.0",
         "@cerner/terra-cli": "^1.6.0",
         "@cerner/terra-core-docs": "^1.0.0",
         "@cerner/terra-dev-site": "^8.0.0",
@@ -187,12 +187,6 @@
         "regenerator-runtime": "^0.13.9",
         "style-loader": "^2.0.0",
         "stylelint": "^13.0.0",
-        "terra-aggregate-translations": "^1.0.0",
-        "terra-application": "^1.48.0",
-        "terra-base": "^5.0.0",
-        "terra-collapsible-menu-view": "^6.29.0",
-        "terra-disclosure-manager": "^4.27.0",
-        "terra-enzyme-intl": "^3.0.0",
         "url-loader": "^4.1.1",
         "utf-8-validate": "^5.0.2",
         "uuid": "^3.0.0",
@@ -204,7 +198,7 @@
     },
     "scripts": {
         "bootstrap:hoist": "lerna bootstrap --hoist --force-local --nohoist=one-cerner-style-icons",
-        "clean": "lerna clean --yes || true && echo 'removing root node_modules' && rm -rf node_modules",
+        "clean": "lerna clean --yesnpm  || true && echo 'removing root node_modules' && rm -rf node_modules",
         "clean:all": "npm run clean:build && npm run clean",
         "clean:build": "rm -rf ./packages/**/lib",
         "clean:install": "npm run clean:all && time npm install",
@@ -222,13 +216,12 @@
         "lint:js": "eslint --ext .js,.jsx .",
         "lint:fix": "eslint --fix --ext .js,.jsx .",
         "lint:scss": "stylelint './**/src/**/*.scss' --syntax scss",
-        "lint:package-json": "npm run terra -- package-json-lint",
-        "mocha": "cd ./terra-functional-testing && npm run mocha",
+        "lint:package-json": "npx terra -- package-json-lint",
+        "mocha": "cd ./packages/terra-functional-testing && npm run mocha",
         "postinstall": "npm run bootstrap:hoist && npm run compile:build",
         "pretest": "npm run lint",
-        "prepare-for-release": "npm run terra -- prepare-for-release",
+        "prepare-for-release": "npx terra -- prepare-for-release",
         "start": "NODE_OPTIONS=--max_old_space_size=8192 webpack serve --config webpack.dev-site.config.js",
-        "terra": "node packages/terra-cli/bin/terra",
         "test": "npm run lint && npm run jest && npm run mocha",
         "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme",
         "wdio-default": "terra wdio --themes terra-default-theme",
@@ -280,7 +273,6 @@
         "do the keywords need updating?",
         "fix wdio tests script",
         "add npm run wdio back to test script once fixed",
-        "update eslintconfig",
-        "postcss 8.4 and above causes stylelint errors, locked to 8.3.x"
+        "update eslintconfig"
     ]
 }

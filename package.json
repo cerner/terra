@@ -224,7 +224,7 @@
         "postinstall": "npm run bootstrap:hoist && npm run compile:build",
         "pretest": "npm run lint",
         "prepare-for-release": "npm run terra -- prepare-for-release",
-        "start": "NODE_OPTIONS=--max_old_space_size=8192 webpack serve --config webpack.dev-site.config.js",
+        "start": "NODE_OPTIONS=--max_old_space_size=8192 webpack serve",
         "terra": "node packages/terra-cli/bin/terra",
         "test": "npm run lint && npm run jest && npm run mocha",
         "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme",

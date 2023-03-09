@@ -1,8 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { config } = require('@cerner/terra-functional-testing');
 
-console.log(config);
-
 const defaultBefore = config.before;
 config.before = () => {
   if (defaultBefore) {

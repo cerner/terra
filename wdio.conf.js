@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const { config } = require('@cerner/terra-functional-testing');
+const { config } = require('./packages/terra-functional-testing/src/config/wdio.conf');
 
 const defaultBefore = config.before;
 config.before = () => {

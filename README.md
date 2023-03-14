@@ -57,28 +57,26 @@ Terra was originally an open source project. The repos hosting the open source v
 
 ## Package List
 
-| Packages                                                                                         |
-|--------------------------------------------------------------------------------------------------|
-| [browserslist-config-terra](./browserslist-config-terra/README.md)                               |
-| [duplicate-package-checker-webpack-plugin](./duplicate-package-checker-webpack-plugin/README.md) |
-| [eslint-config-terra](./eslint-config-terra/README.md)                                           |
-| [jest-config-terra](./jest-config-terra/README.md)                                               |
-| [package-json-lint](./package-json-lint/README.md)                                               |
-| [package-json-lint-config-terra](./package-json-lint-config-terra/README.md)                     |
-| [stylelint-config-terra](./stylelint-config-terra/README.md)                                     |
-| [terra-aggregate-translations](./packages/terra-aggregate-translations/README.md)                |
-| [terra-aggregator](./packages/terra-aggregator/README.md)                                        |
-| [terra-alert](./packages/terra-alert/README.md)                                                  |
-| [terra-application](./packages/terra-application/README.md)                                      |
-| [terra-application-docs](./packages/terra-application-docs/README.md)                            |
-| [terra-cli](./packages/terra-cli/README.md)                                                      |
-| [terra-dev-site](./packages/terra-dev-site/README.md)                                            |
-| [terra-enzyme-intl](./packages/terra-enzyme-intl/README.md)                                      |
-| [terra-functional-testing](./packages/terra-functional-testing/README.md)                        |
-| [terra-open-source-scripts](./packages/terra-open-source-scripts/README.md)                      |
-| [terra-polyfill](./packages/terra-polyfill/README.md)                                            |
-| [terra-toolkit-docs](./packages/terra-toolkit-docs/README.md)                                    |
-| [webpack-config-terra](./webpack-config-terra/README.md)                                         |
+| Packages                                                                                         | installation source |
+|--------------------------------------------------------------------------------------------------|---------------------|
+| [browserslist-config-terra](./browserslist-config-terra/README.md)                               | npm                 |
+| [duplicate-package-checker-webpack-plugin](./duplicate-package-checker-webpack-plugin/README.md) | npm                 |
+| [eslint-config-terra](./eslint-config-terra/README.md)                                           | local               |
+| [jest-config-terra](./jest-config-terra/README.md)                                               | local               |
+| [package-json-lint](./package-json-lint/README.md)                                               | local               |
+| [package-json-lint-config-terra](./package-json-lint-config-terra/README.md)                     | local               |
+| [stylelint-config-terra](./stylelint-config-terra/README.md)                                     | local               |
+| [terra-aggregate-translations](./packages/terra-aggregate-translations/README.md)                | npm                 |
+| [terra-aggregator](./packages/terra-aggregator/README.md)                                        | npm                 |
+| [terra-application](./packages/terra-application/README.md)                                      | npm                 |
+| [terra-application-docs](./packages/terra-application-docs/README.md)                            | local               |
+| [terra-cli](./packages/terra-cli/README.md)                                                      | npm                 |
+| [terra-dev-site](./packages/terra-dev-site/README.md)                                            | npm                 |
+| [terra-enzyme-intl](./packages/terra-enzyme-intl/README.md)                                      | npm                 |
+| [terra-functional-testing](./packages/terra-functional-testing/README.md)                        | npm                 |
+| [terra-open-source-scripts](./packages/terra-open-source-scripts/README.md)                      | npm                 |
+| [terra-toolkit-docs](./packages/terra-toolkit-docs/README.md)                                    | local               |
+| [webpack-config-terra](./webpack-config-terra/README.md)                                         | local               |
 
 <!-- AUTO-GENERATED-CONTENT:END *-->
 

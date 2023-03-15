@@ -4,8 +4,7 @@ const TerraDevSite = require('./packages/terra-dev-site/src/webpack/plugin/Terra
 const WebpackConfigTerra = require('./packages/webpack-config-terra/lib/webpack.config');
 
 const coreConfig = (env = {}) => {
-  const { defaultLocale = 'en' } = env;
-  
+
   return ({
     entry: {
       index: path.join(__dirname, 'index'),
@@ -66,10 +65,10 @@ const coreConfig = (env = {}) => {
         //        '../../../../terra-ui-repo/src/initializeXFC.js',
         //        '../../../../terra-ui-repo/src/IllustrationGrid.scss',
         //      ],
-
       }),
     ],
-  })
+  });
+
 };
 
 const mergedConfig = (env, argv) => (

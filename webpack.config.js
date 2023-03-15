@@ -9,7 +9,7 @@ const html = fs.readFileSync(require.resolve('./tests/terra-dev-site/head.html')
 
 const coreConfig = (env = {}) => {
   const { defaultLocale = 'en' } = env;
-  
+
   return ({
     entry: {
       index: path.join(__dirname, 'index'),
@@ -173,7 +173,8 @@ const coreConfig = (env = {}) => {
         filename: 'element-out-of-bound.html',
       }),
     ],
-  })
+  });
+
 };
 
 const mergedConfig = (env, argv) => (

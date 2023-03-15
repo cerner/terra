@@ -206,7 +206,7 @@
         "clean:build": "rm -rf ./packages/**/lib",
         "clean:install": "npm run clean:all && time npm install",
         "clean:package-lock": "rm -rf package-lock.json && rm -rf ./packages/**/package-lock.json",
-        "compile": "npm run compile:clean && npm run compile:build",
+        "compile": "npm run clean:build && npm run compile:build",
         "compile:build": "lerna run compile --parallel",
         "danger": "danger ci",
         "deploy": "npm run compile:prod && gh-pages -d build",

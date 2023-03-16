@@ -7,7 +7,7 @@ const WebpackConfigTerra = require('./packages/webpack-config-terra/lib/webpack.
 
 const html = fs.readFileSync(require.resolve('./tests/terra-dev-site/head.html'), 'utf8');
 
-const coreConfig = () => ({
+const coreConfig = (env = {}) => ({
   entry: {
     index: path.join(__dirname, 'index'),
   },
@@ -139,31 +139,31 @@ const coreConfig = () => ({
       excludeChunks: ['terra-application-test/index'],
     }),
     new HtmlWebpackPlugin({
-      lang: defaultLocale,
+      lang: env.defaultLocale,
       template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'accessible.html'),
       chunks: ['index'],
       filename: 'accessible.html',
     }),
     new HtmlWebpackPlugin({
-      lang: defaultLocale,
+      lang: env.defaultLocale,
       template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'insufficient-color-contrast.html'),
       chunks: ['index'],
       filename: 'insufficient-color-contrast.html',
     }),
     new HtmlWebpackPlugin({
-      lang: defaultLocale,
+      lang: env.defaultLocale,
       template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'dispatch-custom-event.html'),
       chunks: ['index'],
       filename: 'dispatch-custom-event.html',
     }),
     new HtmlWebpackPlugin({
-      lang: defaultLocale,
+      lang: env.defaultLocale,
       template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'validates-element.html'),
       chunks: ['index'],
       filename: 'validates-element.html',
     }),
     new HtmlWebpackPlugin({
-      lang: defaultLocale,
+      lang: env.defaultLocale,
       template: path.join(__dirname, 'packages', 'terra-functional-testing', 'tests', 'fixtures', 'element-out-of-bound.html'),
       chunks: ['index'],
       filename: 'element-out-of-bound.html',

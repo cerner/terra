@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const {
-  merge
+  merge,
 } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerraDevSite = require('./packages/terra-dev-site/src/webpack/plugin/TerraDevSite');
@@ -11,7 +11,7 @@ const html = fs.readFileSync(require.resolve('./tests/terra-dev-site/head.html')
 
 const coreConfig = (env = {}) => {
   const {
-    defaultLocale = 'en'
+    defaultLocale = 'en',
   } = env;
   return {
     entry: {
@@ -30,46 +30,46 @@ const coreConfig = (env = {}) => {
           title: 'Terra',
         },
         primaryNavigationItems: [{
-            path: '/home',
+          path: '/home',
+          label: 'Home',
+          contentExtension: 'home',
+          additionalContent: [{
             label: 'Home',
-            contentExtension: 'home',
-            additionalContent: [{
-              label: 'Home',
-              filePath: path.resolve(process.cwd(), 'README.md'),
-            }, ],
-          },
-          // {
-          //   path: '/about',
-          //   label: 'About',
-          //   contentExtension: 'about',
-          // },
-          {
-            path: '/application',
-            label: 'Application',
-            contentExtension: 'app',
-          },
-          // {
-          //   path: '/components',
-          //   label: 'Components',
-          //   contentExtension: 'doc',
-          // }, {
-          //   path: '/graphs',
-          //   label: 'Graphs',
-          //   contentExtension: 'graph',
-          // },
-          {
-            path: '/dev_tools',
-            label: 'Developer Tools',
-            contentExtension: 'tool',
-          }, {
-            path: '/guides',
-            label: 'Guides',
-            contentExtension: 'guide',
-          }, {
-            path: '/tests',
-            label: 'Tests',
-            contentExtension: 'test',
-          }
+            filePath: path.resolve(process.cwd(), 'README.md'),
+          }],
+        },
+        // {
+        //   path: '/about',
+        //   label: 'About',
+        //   contentExtension: 'about',
+        // },
+        {
+          path: '/application',
+          label: 'Application',
+          contentExtension: 'app',
+        },
+        // {
+        //   path: '/components',
+        //   label: 'Components',
+        //   contentExtension: 'doc',
+        // }, {
+        //   path: '/graphs',
+        //   label: 'Graphs',
+        //   contentExtension: 'graph',
+        // },
+        {
+          path: '/dev_tools',
+          label: 'Developer Tools',
+          contentExtension: 'tool',
+        }, {
+          path: '/guides',
+          label: 'Guides',
+          contentExtension: 'guide',
+        }, {
+          path: '/tests',
+          label: 'Tests',
+          contentExtension: 'test',
+        },
         ],
         //      sideEffectImportFilePaths: [
         //        '../../../../terra-ui-repo/src/initializeXFC.js',
@@ -86,7 +86,7 @@ const coreConfig = (env = {}) => {
           additionalContent: [{
             label: 'Home',
             filePath: path.resolve(process.cwd(), 'packages', 'terra-dev-site', 'README.md'),
-          }, ],
+          }],
         }, {
           path: '/extended',
           label: 'Extended',
@@ -135,7 +135,7 @@ const coreConfig = (env = {}) => {
           key: 'terra-application-docs.test-extension',
           text: 'Test Extension',
           modalFilePath: path.resolve(process.cwd(), 'tests', 'terra-dev-site', 'test-extension', 'TestExtension'),
-        }, ],
+        }],
         excludeChunks: ['terra-application-test/index'],
       }),
       new HtmlWebpackPlugin({
@@ -169,7 +169,7 @@ const coreConfig = (env = {}) => {
         filename: 'element-out-of-bound.html',
       }),
     ],
-  }
+  };
 };
 
 const mergedConfig = (env, argv) => (

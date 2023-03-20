@@ -39,8 +39,8 @@ jobs:
       fail-fast: true
       matrix:
         form-factor: [tiny, small, medium, large, huge, enormous]
-        # theme: [default, lowlight, fusion]
-        theme: [default]
+        theme: [default, lowlight, fusion]
+        # theme: [default]
 
 
     steps:
@@ -52,14 +52,14 @@ jobs:
         run: |
           npm run compile:prod -- --output-path build/default
         if: matrix.theme == 'default'
-      # - name: Compile Project Lowlight
-      #   run: |
-      #     npm run compile:lowlight -- --output-path build/lowlight
-      #   if: matrix.theme == 'lowlight'
-      # - name: Compile Project Fusion
-      #   run: |
-      #     npm run compile:fusion -- --output-path build/fusion
-      #   if: matrix.theme == 'fusion'
+      - name: Compile Project Lowlight
+        run: |
+          npm run compile:lowlight -- --output-path build/lowlight
+        if: matrix.theme == 'lowlight'
+      - name: Compile Project Fusion
+        run: |
+          npm run compile:fusion -- --output-path build/fusion
+        if: matrix.theme == 'fusion'
       - name: Run WDIO Tests for form factor ${{ matrix.form-factor }} and ${{ matrix.theme }}
         run: SITE=build/${{ matrix.theme }} FORM_FACTOR=${{ matrix.form-factor }} npm run wdio-${{ matrix.theme }}
 

@@ -1,3 +1,7 @@
+// NOTE: This is a placeholder file for the production environemnt.
+// It may require additional changes.
+
+
 const path = require('path');
 const { merge } = require('webpack-merge');
 const TerraDevSite = require('./packages/terra-dev-site/src/webpack/plugin/TerraDevSite');

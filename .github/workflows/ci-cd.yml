@@ -40,8 +40,6 @@ jobs:
       matrix:
         form-factor: [tiny, small, medium, large, huge, enormous]
         theme: [default, lowlight, fusion]
-        # theme: [default]
-
 
     steps:
       - name: Checkout Project
@@ -61,7 +59,6 @@ jobs:
           npm run compile:fusion -- --output-path build/fusion
         if: matrix.theme == 'fusion'
       - name: Run WDIO Tests for form factor ${{ matrix.form-factor }} and ${{ matrix.theme }}
-        # run: SITE=build/${{ matrix.theme }} FORM_FACTOR=${{ matrix.form-factor }} npm run wdio:${{ matrix.theme }}
         run: SITE=build/${{ matrix.theme }} FORM_FACTOR=${{ matrix.form-factor }} npm run wdio:${{ matrix.theme }}
 
   # release-and-deploy:

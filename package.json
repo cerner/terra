@@ -217,10 +217,10 @@
         "start": "NODE_OPTIONS=--max_old_space_size=8192 webpack serve --config webpack.dev-site.config.js",
         "terra": "node packages/terra-cli/bin/terra",
         "test": "npm run lint && npm run jest && npm run mocha",
-        "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme",
-        "wdio-default": "terra wdio --themes terra-default-theme",
-        "wdio-lowlight": "terra wdio --themes clinical-lowlight-theme",
-        "wdio-fusion": "terra wdio --themes orion-fusion-theme"
+        "wdio:all": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme",
+        "wdio:default": "terra wdio --themes terra-default-theme",
+        "wdio:lowlight": "terra wdio --themes clinical-lowlight-theme",
+        "wdio:fusion": "terra wdio --themes orion-fusion-theme"
     },
     "other scripts (needs review)": {
         "clean:obsolete-snapshots": "npm test -- -u",

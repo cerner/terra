@@ -1,14 +1,22 @@
+// NOTE: This is a placeholder file for the production environemnt.
+// It may require additional changes.
+
+
 const path = require('path');
 const { merge } = require('webpack-merge');
-const { TerraDevSite } = require('@cerner/terra-dev-site');
-const WebpackConfigTerra = require('@cerner/webpack-config-terra');
+const TerraDevSite = require('./packages/terra-dev-site/src/webpack/plugin/TerraDevSite');
+const WebpackConfigTerra = require('./packages/webpack-config-terra/lib/webpack.config');
 
 const coreConfig = () => ({
+  entry: {
+    index: path.join(__dirname, 'index'),
+  },
   resolve: {
     fallback: {
       fs: false,
       path: require.resolve('path'),
     },
+    extensions: ['.jst'],
   },
   plugins: [
     new TerraDevSite({
@@ -54,16 +62,11 @@ const coreConfig = () => ({
         path: '/guides',
         label: 'Guides',
         contentExtension: 'guide',
-      }, {
-        path: '/tests',
-        label: 'Tests',
-        contentExtension: 'test',
       }],
       //      sideEffectImportFilePaths: [
       //        '../../../../terra-ui-repo/src/initializeXFC.js',
       //        '../../../../terra-ui-repo/src/IllustrationGrid.scss',
       //      ],
-
     }),
   ],
 });
@@ -72,4 +75,9 @@ const mergedConfig = (env, argv) => (
   merge(WebpackConfigTerra(env, argv), coreConfig())
 );
 
-module.exports = mergedConfig;
+module.exports = (env, argv) => {
+  const config = mergedConfig(env, argv);
+  // Brittle
+  config.module.rules[0].oneOf[0].test = /\.(jsx|js|jst)$/;
+  return config;
+};

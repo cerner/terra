@@ -5,6 +5,8 @@
 * Changed
   * Temporarily disabled test due to failures.
 
+## 3.3.1 - (March 29, 2023)
+
 * Fixes
   * Updated `mocha` to fix CVE
   * Added `babel-cli` to fix install issue 
